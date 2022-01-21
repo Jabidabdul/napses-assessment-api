@@ -31,7 +31,6 @@ route.get('/cart/getitem',async(req, res)=>{
 
 route.post('/cart/additem', async (req, res)=>{
   const {userId=1,prodId, title, price, image} = req.body;
-  console.log(prodId, title, price, userId)
   let collection = await productCollection.findOne({user_id : userId })
   if(collection){
     try {
